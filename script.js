@@ -14,6 +14,9 @@ function gerarPDF() {
   // Criar instância jsPDF
   const pdf = new jsPDF();
 
+  // Definir tamanho da fonte
+  pdf.setFontSize(10); // Ajuste o valor conforme necessário
+
   // Adicionar logo ou imagem ao PDF
   const logoImg = new Image();
   logoImg.src = '/img/DKCELL.png'; // Substitua com o caminho para sua imagem
@@ -22,11 +25,11 @@ function gerarPDF() {
 
   const celllockImg = new Image();
   celllockImg.src = '/img/senha.jpg'; // Substitua com o caminho para sua imagem
-  pdf.addImage(celllockImg, 'PNG', 135, 195, 25, 40); // Parâmetros 
+  pdf.addImage(celllockImg, 'PNG', 135, 195, 25, 40); // Parâmetros
 
   const lockImg2 = new Image();
   lockImg2.src = '/img/senha2.jpg'; // Substitua com o caminho para sua imagem
-  pdf.addImage(lockImg2, 'PNG', 170, 195, 20, 25); // Parâmetros 
+  pdf.addImage(lockImg2, 'PNG', 170, 195, 20, 25); // Parâmetros
 
   // retangulos criados
   // via do cliente
@@ -41,12 +44,12 @@ function gerarPDF() {
 
   pdf.rect(5, 70, 135, 7); // Retângulo para "entrada e saida"
   pdf.rect(142, 70, 63, 7); // Retângulo para "contato"
-  
+
   pdf.rect(5, 90, 170, 22); // CONDIÇÃO DE EXECUÇAO
   pdf.rect(177, 90, 28, 22); // Retângulo para assinatura
-  
+
   pdf.rect(5, 115, 200, 1); // Retângulo para separar via cliente e interna
-  
+
   // via interna
   pdf.rect(110, 130, 95, 7); // Retângulo para "VALOR DO SERVIÇ0"
   pdf.rect(5, 140, 100, 7); // Retângulo para "Nome do cliente: "
@@ -55,14 +58,14 @@ function gerarPDF() {
   pdf.rect(110, 150, 95, 7); // Retângulo para "modelo"
   pdf.rect(5, 160, 200, 7); // Retângulo para "acessorios"
   pdf.rect(5, 170, 200, 7); // Retângulo para "descrição"
-  
+
   pdf.rect(130, 190, 75, 47); // Retângulo para senha
   pdf.rect(164, 223, 32, 8); // Retângulo para senha
-  
+
   pdf.rect(5, 190, 57, 7); // Retângulo para "entrada"
   pdf.rect(63, 190, 62, 7); // Retângulo para "saida"
   pdf.rect(5, 200, 120, 37); // Retângulo para "condição"
-  
+
   pdf.rect(5, 242, 200, 14); // Retângulo para "detalhes"
   pdf.rect(5, 260, 200, 14); // Retângulo para "laudo"
   pdf.rect(5, 278, 200, 14); // Retângulo para "descrição"
@@ -70,11 +73,14 @@ function gerarPDF() {
   // Adicionar conteúdo ao PDF
   //cliente
   pdf.text(`VIA CLIENTE`, 170, 10);
-  pdf.text(`Valor do serviço: R$ ${valorServico},00`, 112, 20);
-  pdf.text(`Cliente: ${cliente}`, 6, 30); pdf.text(`Telefone: ${phone}`, 111, 30);
-  pdf.text(`Marca: ${marca}`, 6, 40); pdf.text(`Modelo: ${modelo}`, 111, 40);
+  pdf.text(`Valor do serviço: R$ ${valorServico}`, 112, 20);
+  pdf.text(`Cliente: ${cliente}`, 6, 30);
+  pdf.text(`Telefone: ${phone}`, 111, 30);
+  pdf.text(`Marca: ${marca}`, 6, 40);
+  pdf.text(`Modelo: ${modelo}`, 111, 40);
 
-  pdf.text(`acessorios:`, 6, 50); pdf.text(`detalhes e observações: `, 111, 50);
+  pdf.text(`acessorios:`, 6, 50);
+  pdf.text(`detalhes e observações: `, 111, 50);
   const acessorioslines = pdf.splitTextToSize(acessorios, 90);
   pdf.text(acessorioslines, 6, 56);
   const detalheslines = pdf.splitTextToSize(detalhes, 90);
@@ -82,25 +88,40 @@ function gerarPDF() {
 
   pdf.text(`data entrada: ${entrada} previsão saída: ${saida}`, 6, 75);
   pdf.text(`contato:(91)98206-6009`, 143, 75);
-  pdf.text(`Endereço: Mercado municipal de Marituba  |  Bairro Centro  |  BOX 179`, 6, 85);
-  
+  pdf.text(
+    `Endereço: Mercado municipal de Marituba  |  Bairro Centro  |  BOX 179`,
+    6,
+    85,
+  );
+
   pdf.text(`CARIMBO`, 178, 95);
   pdf.text(`CONDIÇÃO DE EXECUÇÃO: Atenção, a não retirada do `, 6, 95);
-  pdf.text(`aparelho no prazo de 30 dias serão acrecidos 10% no valor, após`, 6, 100);
-  pdf.text(`60 dias implicará na venda do mesmo para pagamento de gastos`, 6, 105);
+  pdf.text(
+    `aparelho no prazo de 30 dias serão acrecidos 10% no valor, após`,
+    6,
+    100,
+  );
+  pdf.text(
+    `60 dias implicará na venda do mesmo para pagamento de gastos`,
+    6,
+    105,
+  );
   pdf.text(`(art. 06. item 03 do codigo de defesa do consumidor)`, 6, 110);
-  
+
   // tecnico
   pdf.text(`VIA TÉCNICO`, 170, 125);
-  pdf.text(`Valor do serviço: R$ ${valorServico},00`, 112, 135);
-  pdf.text(`Cliente: ${cliente}`, 6, 145); pdf.text(`Telefone: ${phone}`, 111, 145);
-  pdf.text(`Marca: ${marca}`, 6, 155); pdf.text(`Modelo: ${modelo}`, 111, 155);
-  pdf.text(`acessorios:  ${acessorios}`, 6, 166)
-  pdf.text(`Assinatura do cliente :`, 6, 175)
+  pdf.text(`Valor do serviço: R$ ${valorServico}`, 112, 135);
+  pdf.text(`Cliente: ${cliente}`, 6, 145);
+  pdf.text(`Telefone: ${phone}`, 111, 145);
+  pdf.text(`Marca: ${marca}`, 6, 155);
+  pdf.text(`Modelo: ${modelo}`, 111, 155);
+  pdf.text(`acessorios:  ${acessorios}`, 6, 166);
+  pdf.text(`Assinatura do cliente :`, 6, 175);
 
   pdf.text(`entrada: ${entrada}`, 6, 196);
   pdf.text(`saída: ${saida}`, 64, 196);
-  
+  pdf.text(`senha`, 139, 195);
+
   pdf.text(`condição de execução: Atenção, a não retirada`, 6, 207);
   pdf.text(`do aparelho no prazo de 30 dias serão`, 6, 212);
   pdf.text(`acrecidos 10% no valor, após 60 dias`, 6, 217);
@@ -116,7 +137,7 @@ function gerarPDF() {
   pdf.text(`Descição ou defeito do aparelho : `, 6, 283);
   const descricaoLines = pdf.splitTextToSize(descricao, 180);
   pdf.text(descricaoLines, 6, 289);
-  
+
   // Salvar o PDF ou exibir no navegador
   pdf.save('OrdemDeServico.pdf');
 }

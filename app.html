@@ -12,52 +12,61 @@
 </head>
 
 <body>
-    <h1>App de Ordem de Serviço</h1>
+    <div class="logoApp">
+        <img src="/img/DKCELL.png" alt="">
+        <h1>Ordem de Serviço</h1>
+    </div>
 
     <form>
-        <div>
-            <label for="valorServico">valor do serviço: </label>
-            <input type="number" id="valorServico">
+        <div class="coolinput">
+            <label class="text" for="valorServico">valor do serviço: </label>
+            <input type="number" name="valorServico" placeholder="R$" id="valorServico" class="input">
         </div>
-        <div>
-            <label for="cliente">Cliente:</label>
-            <input type="text" id="cliente">   
+        <div class="coolinput">
+            <label class="text" for="cliente">Cliente:</label>
+            <input type="text" name="cliente" id="cliente" class="input">
         </div>
-        <div>
-            <label for="phone">telefone:</label>
-            <input type="text" id="phone">   
+        <div class="coolinput">
+            <label class="text" for="phone">Telefone: </label>
+            <input type="text" name="phone" id="phone" class="input">
         </div>
-        <div>
-            <label for="entrada">data entrada:</label>
-            <input type="date" id="entrada">   
+        <div class="coolinput">
+            <label class="text" for="entrada">data entrada: </label>
+            <input type="date" name="entrada" id="entrada" class="input">
         </div>
-        <div>
-            <label for="saida">previsão saida:</label>
-            <input type="date" id="saida">   
+        <div class="coolinput">
+            <label class="text" for="saida">previsão saida: </label>
+            <input type="date" name="saida" id="saida" class="input">
         </div>
-        <div>
-            <label for="marca">Marca do aparelho: </label>
-            <input type="text" id="marca">  
+        <div class="coolinput">
+            <label class="text" for="marca">Marca: </label>
+            <input type="text" name="marca" id="marca" class="input">
         </div>
-        <div>
-            <label for="modelo">Modelo do aparelho: </label>
-            <input type="text" id="modelo"> 
+        <div class="coolinput">
+            <label class="text" for="modelo">Modelo: </label>
+            <input type="text" name="modelo" id="modelo" class="input">
         </div>
-        <div>
-            <label for="acessorios">acessórios:</label>
-            <textarea id="acessorios"></textarea>
+        <div class="coolinput">
+            <label class="text" for="acessorios">Acessorios: </label>
+            <input type="textArea" name="acessorios" id="acessorios" class="input">
         </div>
-        <div>
-            <label for="detalhes">detalhes e observaçoes:</label>
-            <textarea id="detalhes"></textarea>
+        <div class="coolinput">
+            <label class="text" for="detalhes">detalhes e observações: </label>
+            <input type="textArea" name="detalhes" id="detalhes" class="input">
         </div>
-        <div>
-            <label for="descricao">Descrição ou defeito:</label>
-            <textarea id="descricao"></textarea>
+        <div class="coolinput">
+            <label class="text" for="descricao">Descrição ou defeito: </label>
+            <input type="textArea" name="descricao" id="descricao" class="input">
         </div>
-        
-        <button onclick="gerarPDF()">Gerar PDF</button>
+
     </form>
+    <button onclick="gerarPDF()">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 3H12H8C6.34315 3 5 4.34315 5 6V18C5 19.6569 6.34315 21 8 21H11M13.5 3L19 8.625M13.5 3V7.625C13.5 8.17728 13.9477 8.625 14.5 8.625H19M19 8.625V11.8125" stroke="#fffffff" stroke-width="2"></path>
+            <path d="M17 15V18M17 21V18M17 18H14M17 18H20" stroke="#fffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        Gerar PDF
+    </button>
 
     <script src="script.js"></script>
 </body>
