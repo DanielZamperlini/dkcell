@@ -105,6 +105,30 @@ form {
     grid-template-columns: 1fr;
     gap: 10px;
   }
+  form {
+    grid-template-columns: 1fr;
+  }
+  .input1, .input2, .input3, .input4, .input5, .input6, .input7 {
+    grid-column: 1/2;
+    max-width: 100%;
+  }
+  body {
+    margin: 10px ;
+  }
+  .logoApp {
+    margin: 0;
+    padding: 0;
+  }
+  .logoApp img {
+    max-width: 150px;
+  }
+  .logoApp h1 {
+    font-size: 1.25rem;
+  }
+  .logoApp {
+    justify-content: flex-start;
+  }
+  
 }
 
 button {
