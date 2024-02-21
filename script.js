@@ -19,16 +19,16 @@ function gerarPDF() {
 
   // Adicionar logo ou imagem ao PDF
   const logoImg = new Image();
-  logoImg.src = '/img/DKCELL.png'; // Substitua com o caminho para sua imagem
+  logoImg.src = 'img/DKCELL.png'; // Substitua com o caminho para sua imagem
   pdf.addImage(logoImg, 'PNG', 5, 5, 40, 20); // Parâmetros
   pdf.addImage(logoImg, 'PNG', 5, 120, 40, 20); // Parâmetros
 
   const celllockImg = new Image();
-  celllockImg.src = '/img/senha.jpg'; // Substitua com o caminho para sua imagem
+  celllockImg.src = 'img/senha.jpg'; // Substitua com o caminho para sua imagem
   pdf.addImage(celllockImg, 'PNG', 135, 195, 25, 40); // Parâmetros
 
   const lockImg2 = new Image();
-  lockImg2.src = '/img/senha2.jpg'; // Substitua com o caminho para sua imagem
+  lockImg2.src = 'img/senha2.jpg'; // Substitua com o caminho para sua imagem
   pdf.addImage(lockImg2, 'PNG', 170, 195, 20, 25); // Parâmetros
 
   // retangulos criados
