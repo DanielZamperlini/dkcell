@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de Ordem de Serviço</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Adicione o link para a biblioteca jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1>App de Ordem de Serviço</h1>
+
+    <form>
+        <div>
+            <label for="valorServico">valor do serviço: </label>
+            <input type="number" id="valorServico">
+        </div>
+        <div>
+            <label for="cliente">Cliente:</label>
+            <input type="text" id="cliente">   
+        </div>
+        <div>
+            <label for="phone">telefone:</label>
+            <input type="text" id="phone">   
+        </div>
+        <div>
+            <label for="entrada">data entrada:</label>
+            <input type="date" id="entrada">   
+        </div>
+        <div>
+            <label for="saida">previsão saida:</label>
+            <input type="date" id="saida">   
+        </div>
+        <div>
+            <label for="marca">Marca do aparelho: </label>
+            <input type="text" id="marca">  
+        </div>
+        <div>
+            <label for="modelo">Modelo do aparelho: </label>
+            <input type="text" id="modelo"> 
+        </div>
+        <div>
+            <label for="acessorios">acessórios:</label>
+            <textarea id="acessorios"></textarea>
+        </div>
+        <div>
+            <label for="detalhes">detalhes e observaçoes:</label>
+            <textarea id="detalhes"></textarea>
+        </div>
+        <div>
+            <label for="descricao">Descrição ou defeito:</label>
+            <textarea id="descricao"></textarea>
+        </div>
+        
+        <button onclick="gerarPDF()">Gerar PDF</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
