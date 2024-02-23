@@ -218,11 +218,11 @@ input:checked + .slider:before {
   form {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    gap: 5px;
   }
   .input1{
     grid-column: 2/3;
-    max-width: 100%;
+    width: 100%;
   }
   .input2{
     grid-column: 1/2;
@@ -255,19 +255,23 @@ input:checked + .slider:before {
   .logoApp h1 {
     margin-top: 10px;
   }
+  .coolinput {
+    margin-right: -20px;
+    margin-left: 0px;
+  }
 
   body {
-    margin: 40px ;
+    margin: 30px ;
   }
   .logoApp {
     margin: 0;
     padding: 0;
   }
   .logoApp img {
-    max-width: 150px;
+    max-width: 100px;
   }
   .logoApp h1 {
-    font-size: 1.25rem;
+    font-size: 1.125rem;
   }
   .logoApp {
     justify-content: flex-start;
