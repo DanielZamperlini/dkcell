@@ -215,7 +215,13 @@ input:checked + .slider:before {
     right: 20px;
     top: 5px;
   }
-  input{ touch-action: none; }
+  input, select {
+    font-size: 16px;
+  }
+  .coolinput input{
+    touch-action: none;
+   -ms-touch-action: none;
+   }
   form {
     display: grid;
     grid-template-columns: 1fr 1fr;
