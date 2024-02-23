@@ -75,6 +75,7 @@ h1 {
 .coolinput input[type=text].input:focus {
   outline: none;
   color: var(--color2);
+  
 }
 
 form {
@@ -216,7 +217,7 @@ input:checked + .slider:before {
     top: 5px;
   }
   input, select {
-    font-size: 16px;
+    font-size: 16px !important;
   }
   .coolinput input{
     touch-action: none !important;
