@@ -269,7 +269,7 @@ input:checked + .slider:before {
   }
 
   body {
-    margin: 30px ;
+    margin: 40px ;
   }
   .logoApp {
     margin: 0;
@@ -317,4 +317,32 @@ body.ativo {
 .ativo button {
   background-color: var(--color1);
   color: var(--color2);
+}
+@media (max-width: 500px) {
+  .switch {
+    right: 30px;
+    top: 10px;
+  }
+  form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+  .input1, .input2, .input3, .input4, .input5, .input6, .input7, .inputfull {
+    grid-column: 1;
+  }
+  .coolinput {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+  body {
+    margin: 30px ;
+  }
+  .logoApp h1 {
+    margin-top: 0px;
+  }
+  .logoApp {
+    margin-top: 20px;
+  }
+  
 }
