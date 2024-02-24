@@ -7,13 +7,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>App de Ordem de Serviço</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/loader.css">
     <!-- Adicione o link para a biblioteca jsPDF -->
     <link rel="shortcut icon" href="pesquisa.png" type="image/x-icon">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js" integrity="sha384-NaWTHo/8YCBYJ59830LTz/P4aQZK1sS0SneOgAvhsIl3zBu8r9RevNg5lHCHAuQ/" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <div class="containerApp">
+    <div id="loading-container" class="container">
+        <div class="cloud front">
+            <h1 style="color: #4C9BEB;">Loading . . .</h1>
+            <span class="left-front"></span>
+            <span class="right-front"></span>
+        </div>
+        <span class="sun sunshine"></span>
+        <span class="sun"></span>
+        <div class="cloud back">
+          <span class="left-back"></span>
+          <span class="right-back"></span>
+        </div>
+    </div>
+    <div id="content-container" style="display: none;" class="containerApp">
 
         <label id="changeColorButton" class="switch">
             <input type="checkbox">
@@ -76,6 +90,8 @@
         </button>
     </div>
 
+    <script src="scripts/pdf.js"></script>
+    <script src="scripts/loader.js"></script>
     <script src="script.js"></script>
 </body>
 
