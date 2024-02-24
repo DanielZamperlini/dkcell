@@ -45,8 +45,8 @@ function gerarPDF() {
   pdf.rect(5, 70, 135, 7); // Retângulo para "entrada e saida"
   pdf.rect(142, 70, 63, 7); // Retângulo para "contato"
 
-  pdf.rect(5, 90, 170, 22); // CONDIÇÃO DE EXECUÇAO
-  pdf.rect(177, 90, 28, 22); // Retângulo para assinatura
+  pdf.rect(5, 90, 140, 22); // CONDIÇÃO DE EXECUÇAO
+  pdf.rect(147, 90, 58, 22); // Retângulo para assinatura
 
   pdf.rect(5, 115, 200, 1); // Retângulo para separar via cliente e interna
 
@@ -94,7 +94,7 @@ function gerarPDF() {
     85,
   );
 
-  pdf.text(`CARIMBO`, 178, 95);
+  pdf.text(`CARIMBO`, 150, 95);
   pdf.text(`CONDIÇÃO DE EXECUÇÃO: Atenção, a não retirada do `, 6, 95);
   pdf.text(
     `aparelho no prazo de 30 dias serão acrecidos 10% no valor, após`,
